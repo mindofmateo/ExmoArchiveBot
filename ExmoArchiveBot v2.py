@@ -36,7 +36,8 @@ app_refresh = ''
 acct_code = ''
 scopes = 'account creddits edit flair history identity livemanage modconfig modcontributors modflair modlog modothers modposts modself modwiki mysubreddits privatemessages read report save submit subscribe vote wikiedit wikiread'
 
-skip = ('reddit','redd.it')               # Omit these domains when archiving.
+# Omit these domains when archiving:
+skip = ('reddit','redd.it')
 
 username = ''
 password = ''
@@ -85,8 +86,9 @@ def commentbuilder(input_url):
 # End of commentbuilder()
 
 def make_comment(incomingurl, item):
+    # reply is the plain text that will be entered into the comment/reply field.
     reply = commentbuilder(incomingurl)
-    item.add_comment(reply)  # 'reply' is the plain text that will be entered into the comment field.
+    item.add_comment(reply)
     time.sleep(10)
 # End of make_comment()
 
